@@ -111,7 +111,6 @@ Setup the links to your social pages in the theme's `_config.yml`. Links are in 
 ```
 # Social Accounts
 twitter_url:
-facebook_url:
 github_url: https://github.com/klugjo/hexo-theme-clean-blog
 ```
 
