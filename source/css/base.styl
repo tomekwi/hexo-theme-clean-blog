@@ -104,10 +104,10 @@ hr.small
   position relative
   background-color gray
   margin-bottom 50px
+  background-size cover
   &, .full-background
     background no-repeat center center
     background-attachment scroll
-    background-size cover
   .full-background
     position absolute
     top 0
@@ -115,6 +115,8 @@ hr.small
     bottom 0
     left 0
     transition opacity cubic-bezier(0, 0, 0.2, 1) 2000ms
+    @media (min-width: 1921px), (max-width: 768px)
+      background-size cover
   .full-background.full-background·hidden
     opacity 0
   .site-heading, .post-heading, .page-heading
