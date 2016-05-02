@@ -1,0 +1,21 @@
+<div class="full-background" id="intro-header’s-full-background"></div>
+<script>(function() {
+    // Fade big background on image load
+    const background =
+        document.querySelector('#intro-header’s-full-background');
+    const hiddenClass = 'full-background·hidden';
+    background.classList.add(hiddenClass);
+
+    const backgroundImageUrlMatches =
+        getComputedStyle(background)
+        .getPropertyValue('background-image')
+        .match(/^url\(['"](.*)['"]\)$/)
+    if (!backgroundImageUrlMatches) return;
+    const backgroundImageUrl =
+        backgroundImageUrlMatches[1];
+    const imageLoader = document.createElement('img');
+    imageLoader.src = backgroundImageUrl;
+    imageLoader.addEventListener('load', function() {
+        background.classList.remove(hiddenClass)
+    });
+})();</script>

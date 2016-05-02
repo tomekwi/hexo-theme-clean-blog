@@ -55,6 +55,21 @@
 
     <!-- Custom CSS -->
     <%- css('css/style.css') %>
+    <style>
+        .intro-header {
+            background-image: url('<%- theme.index_cover %>@preview.gif');
+        }
+        .intro-header .full-background {
+            background-image: url('<%- theme.index_cover %>.jpg');
+        }
+        @media
+        (-webkit-min-device-pixel-ratio: 1.25),
+        (min-resolution: 120dpi) {
+            .intro-header .full-background {
+                background-image: url('<%- theme.index_cover %>@2x.jpg');
+            }
+        }
+    </style>
 
     <!-- Custom Fonts -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
