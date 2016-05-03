@@ -55,18 +55,22 @@
 
     <!-- Custom CSS -->
     <%- css('css/style.css') %>
+    <!-- Set your background image for this header in your post front-matter: cover -->
+    <%
+        var cover = page.cover || theme.index_cover;
+    %>
     <style>
         .intro-header {
-            background-image: url('<%- theme.index_cover %>@preview.gif');
+            background-image: url('<%- cover %>@preview.gif');
         }
         .intro-header .full-background {
-            background-image: url('<%- theme.index_cover %>.jpg');
+            background-image: url('<%- cover %>.jpg');
         }
         @media
         (-webkit-min-device-pixel-ratio: 1.25),
         (min-resolution: 120dpi) {
             .intro-header .full-background {
-                background-image: url('<%- theme.index_cover %>@2x.jpg');
+                background-image: url('<%- cover %>@2x.jpg');
             }
         }
     </style>
