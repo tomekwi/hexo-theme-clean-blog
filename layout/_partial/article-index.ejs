@@ -12,5 +12,13 @@
     <p class="post-meta">
         <%= item.date.format(config.date_format) %>
     </p>
+    <a href="<%- config.root %><%- item.path %>">
+        <% if (item.excerpt) { %>
+        <%- item.excerpt %>
+        <p class="text-right">
+            Read on&ensp;▶
+        </p>
+        <% } %>
+    </a>
 </div>
 <hr>
