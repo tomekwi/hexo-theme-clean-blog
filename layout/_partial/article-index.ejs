@@ -1,24 +1,20 @@
-<div class="post-preview">
-    <a href="<%- config.root %><%- item.path %>">
-        <h2 class="post-title">
-            <%- item.title || theme.default_post_title || "Untitled" %>
-        </h2>
-        <% if (item.subtitle && item.subtitle.length) { %>
-            <h3 class="post-subtitle">
-                <%- item.subtitle %>
-            </h3>
-        <% } %>
-    </a>
+<a class="post-preview" href="<%- config.root %><%- item.path %>">
+    <h2 class="post-title">
+        <%- item.title || theme.default_post_title || "Untitled" %>
+    </h2>
+    <% if (item.subtitle && item.subtitle.length) { %>
+        <h3 class="post-subtitle">
+            <%- item.subtitle %>
+        </h3>
+    <% } %>
     <p class="post-meta">
         <%= item.date.format(config.date_format) %>
     </p>
-    <a href="<%- config.root %><%- item.path %>">
-        <% if (item.excerpt) { %>
-        <%- item.excerpt %>
-        <p class="text-right">
-            Read on&ensp;▶
-        </p>
-        <% } %>
-    </a>
-</div>
+    <% if (item.excerpt) { %>
+    <%- item.excerpt %>
+    <p class="post-preview’s-more-link">
+        Read on&ensp;▶
+    </p>
+    <% } %>
+</a>
 <hr>

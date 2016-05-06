@@ -173,38 +173,35 @@ hr.small
         font-size 30px
 
 .post-preview
-  > a
+  display block
+  &, &:hover, &:focus
     color gray-dark
-    &:hover, &:focus
-      text-decoration none
+  &:hover, &:focus
+    text-decoration none
+    .post-preview’s-more-link, .post-title
       color brand-primary
-    > .post-title
-      font-size 30px
-      margin-top 30px
-      margin-bottom 10px
-      &.archive
-        font-size 22px
-    > .post-subtitle
-      margin 0
-      font-weight 300
-      margin-bottom 10px
-  > .post-meta
+  .post-title
+    font-size 30px
+    margin-top 30px
+    margin-bottom 10px
+    &.archive
+      font-size 22px
+  .post-subtitle
+    margin 0
+    font-weight 300
+    margin-bottom 10px
+  .post-meta
     color gray
     font-size 18px
     font-style italic
     margin-top 0
     &.archive
       font-size 16px
-    > a
-      text-decoration none
-      color gray-dark
-      &:hover, &:focus
-        color brand-primary
-        text-decoration underline
   @media only screen and (min-width: 768px)
-    > a
-      > .post-title
-        font-size 36px
+    .post-title
+      font-size 36px
+.post-preview’s-more-link
+  text-align right
 
 .section-heading
   font-size 36px
