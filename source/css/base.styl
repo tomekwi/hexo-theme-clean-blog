@@ -107,11 +107,9 @@ hr.small
   position relative
   background-color gray
   margin-bottom 50px
-  &, .full-background
-    background-repeat no-repeat
-    background-position center center
-    background-attachment scroll
-    background-size cover
+  background-repeat no-repeat
+  background-position center center
+  background-size cover
   .full-background
     position absolute
     top 0
@@ -119,6 +117,10 @@ hr.small
     bottom 0
     left 0
     transition opacity cubic-bezier(0, 0, 0.2, 1) 2000ms
+    background-repeat repeat, repeat, no-repeat
+    background-position center center
+    background-size 50px, 65px, cover
+    // See /layout/_partial.head.ejs
   .full-background.full-background·hidden
     opacity 0
   .site-heading, .post-heading, .page-heading

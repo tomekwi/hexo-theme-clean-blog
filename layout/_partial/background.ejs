@@ -6,10 +6,14 @@
     const hiddenClass = 'full-background·hidden';
     background.classList.add(hiddenClass);
 
-    const backgroundImageUrlMatches =
+    const lastBackgroundImage =
         getComputedStyle(background)
         .getPropertyValue('background-image')
-        .match(/^url\(['"](.*)['"]\)$/)
+        .split(/,\s*/)
+        .pop();
+    const backgroundImageUrlMatches =
+        lastBackgroundImage
+        .match(/^url\(['"](.*)['"]\)$/);
     if (!backgroundImageUrlMatches) return;
     const backgroundImageUrl =
         backgroundImageUrlMatches[1];

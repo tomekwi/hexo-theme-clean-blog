@@ -64,14 +64,19 @@
             background-image: url('<%- cover %>@preview.png');
         }
         .intro-header .full-background {
-            background-image: url('<%- cover %>.jpg');
+            background-image:
+                url('/img/noise-highlights.png'),
+                url('/img/noise-base.png'),
+                url('<%- cover %>.jpg');
         }
         @media
-        (-webkit-min-device-pixel-ratio: 1.25),
-        (min-resolution: 120dpi) {
+        (-webkit-min-device-pixel-ratio: 1.05),
+        (min-resolution: 100dpi) {
             .intro-header .full-background {
-                background-image: url('<%- cover %>@2x.jpg');
-                background-size: 1920px;
+                background-image:
+                    url('/img/noise-highlights@2x.png'),
+                    url('/img/noise-base@2x.png'),
+                    url('<%- cover %>@2x.jpg');
             }
         }
     </style>
