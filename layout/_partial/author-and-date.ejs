@@ -1,0 +1,17 @@
+<%
+    const authorShortName =
+        item.author && item.author.match(/.+?(?=\s|$)/)[0];
+    const authorMarkup =
+        `<span title="${item.author}">${authorShortName}</span>`;
+%>
+Posted <time
+    datetime="<%- item.date.format() %>"
+    title="<%- item.date.format(config.date_format) %>"
+    >
+    <%= item.date.fromNow() %>
+</time>
+<% if (item.author && item.author_url) { %>
+by <a href="<%- item.author_url %>"><%- authorMarkup %></a>
+<% } else if (item.author) { %>
+by <%- authorMarkup %>
+<% } %>

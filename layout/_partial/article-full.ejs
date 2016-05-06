@@ -12,11 +12,7 @@
                     </h2>
                     <% } %>
                     <span class="meta">
-                        <!-- Date and Author -->
-                        <% if(item.author) { %>
-                            Posted by <%- item.author %> on
-                        <% } %>
-                        <%= item.date.format(config.date_format) %>
+                        <%- partial('_partial/author-and-date') %>
                     </span>
                 </div>
             </div>
