@@ -4,14 +4,15 @@
     const authorMarkup =
         `<span title="${item.author}">${authorShortName}</span>`;
 %>
-Posted <time
-    datetime="<%- item.date.format() %>"
-    title="<%- item.date.format(config.date_format) %>"
-    >
-    <%= item.date.fromNow() %>
-</time>
+Posted
 <% if (item.author && item.author_url) { %>
 by <a href="<%- item.author_url %>"><%- authorMarkup %></a>
 <% } else if (item.author) { %>
 by <%- authorMarkup %>
 <% } %>
+on the <time
+    datetime="<%- item.date.format() %>"
+    title="<%- item.date.format('D MMMM YYYY, HH:mm (Z)') %>"
+    >
+    <%= item.date.format('Do [of] MMMM YYYY') %>
+</time>
