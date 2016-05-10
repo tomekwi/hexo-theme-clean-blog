@@ -70,13 +70,23 @@
                 url('<%- cover %>.jpg');
         }
         @media
-        (-webkit-min-device-pixel-ratio: 1.05) and (min-width: 961px),
-        (min-resolution: 100dpi) and (min-width: 961px) {
+        (-webkit-min-device-pixel-ratio: 1.05),
+        (min-resolution: 100dpi) {
             .intro-header .full-background {
                 background-image:
                     url('/img/noise-highlights@2x.png'),
                     url('/img/noise-base@2x.png'),
                     url('<%- cover %>@2x.jpg');
+            }
+        }
+        @media
+        (-webkit-min-device-pixel-ratio: 1.05) and (max-width: 960px),
+        (min-resolution: 100dpi) and (max-width: 960px) {
+            .intro-header .full-background {
+                background-image:
+                    url('/img/noise-highlights@2x.png'),
+                    url('/img/noise-base@2x.png'),
+                    url('<%- cover %>.jpg');
             }
         }
     </style>
