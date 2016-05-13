@@ -5,15 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!--Description-->
-    <% if (page.description){ %>
-        <meta name="description" content="<%= page.description %>">
-    <% } else if (config.description){ %>
-        <meta name="description" content="<%= config.description %>">
-    <% } else if (page.excerpt){ %>
-        <meta name="description" content="<%= strip_html(page.excerpt).replace(/^\s*/, '').replace(/\s*$/, '') %>">
-    <% } else if (page.content){ %>
-        <meta name="description" content="<%= strip_html(page.content).replace(/^\s*/, '').replace(/\s*$/, '').substring(0, 150) %>">
-    <% } %>
+    <%
+    const description = (
+        (page.description &&
+            page.description
+        ) ||
+        (page.excerpt &&
+            strip_html(page.excerpt).replace(/^\s*/, '').replace(/\s*$/, '')
+        ) ||
+        (page.content &&
+            strip_html(page.content).replace(/^\s*/, '').replace(/\s*$/, '').substring(0, 150)
+        ) ||
+        (config.description &&
+            config.description
+        )
+    )
+
+    const getTwitterUsername = (url) =>
+        '@' + url.replace(/^.*\//, '');
+    %>
+
+    <meta name="description" content="<%= description %>">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="<%=
+        getTwitterUsername(page.twitter_url || theme.twitter_url)
+    %>">
+    <meta name="twitter:site" content="<%=
+        getTwitterUsername(theme.twitter_url)
+    %>">
+    <meta name="twitter:title" content="<%=
+        page.title || 'tomek.wiszniewski.cc'
+    %>">
+    <meta name="twitter:description" content="<%= description %>">
+    <meta name="twitter:image" content="<%=
+        config.url + (page.cover || theme.index_cover) + '.jpg'
+    %>">
 
     <!--Author-->
     <% if (config.author){ %>
